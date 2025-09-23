@@ -8,10 +8,7 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 ## Table of Contents
 
 1. [Roadmap](#roadmap)
-2. [Day-Wise Folders](#day-wise-folders)
-    - Sources
-    - Testbench
-    - README.md
+2. [Day-Wise README](#day-wise-folders)
 3. [Summary](#summary)
 4. [Notes / Troubleshooting](#notes--troubleshooting)
 
