@@ -1,5 +1,24 @@
 # Day 1: Introduction to Verilog RTL Design and Synthesis
 
+# Table of Contents
+
+1. [Simulation](#simulation)
+    - Design, Testbench, Simulator
+    - Simulation Flow
+    - Compiling and Running good_mux.v
+    - Viewing Waveforms in GTKWave
+    - Verifying Results
+2. [Synthesis of good_mux.v](#synthesis-of-good_muxv)
+    - Launching Yosys
+    - Reading Design and Library
+    - Generic Synthesis and Technology Mapping
+    - Visualizing Netlist
+    - Writing Gate-Level Netlist
+    - Generating Reports and Area Estimation
+3. [Summary](#summary-1)
+
+
+
 ## Simulation
 
 To perform simulation in Verilog, we need to understand its three fundamental components:
