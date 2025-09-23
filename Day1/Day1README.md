@@ -11,7 +11,7 @@ This document covers the complete workflow of designing, simulating, and synthes
     - Compiling and Running good_mux.v
     - Viewing Waveforms in GTKWave
     - Verifying Results
-2. [Synthesis of good_mux.v](#synthesis-of-good_muxv)
+2. [Synthesis](#synthesis-of-good_muxv)
     - Launching Yosys
     - Reading Design and Library
     - Generic Synthesis and Technology Mapping
