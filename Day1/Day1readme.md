@@ -15,9 +15,9 @@ To perform simulation in Verilog, we need to understand its three fundamental co
 4. Run the simulation with **`vvp`**.  
 5. View waveforms in **GTKWave**.
 
-![Simulation Flow]()  
+![Simulation Flow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/008a514609306cd1d7bc3812fa1ff36b4c96e25a/Day1/Images/Simflow.png)  
 
-![Example]()
+![Example](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/008a514609306cd1d7bc3812fa1ff36b4c96e25a/Day1/Images/Example.png)
 
 ---
 
@@ -40,7 +40,7 @@ ls
 ```
 You should see the following files:
 
-![Verilog_files]()  
+![Verilog_files](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/008a514609306cd1d7bc3812fa1ff36b4c96e25a/Day1/Images/Verilog_files.png)  
 
 Once verified, we can proceed to simulation.
 
