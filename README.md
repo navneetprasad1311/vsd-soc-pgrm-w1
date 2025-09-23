@@ -30,7 +30,7 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 
 
 ## Day-Wise Folders
- - [Day 1: Introduction to Verilog RTL design and synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/tree/main/Day1)
+ - [Day 1: Introduction to Verilog RTL design and synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/a530bea16dc339f54fd4dfa2f90a75eb0251589b/Day1/Day1readme.md)
 
 
 ## Summary
