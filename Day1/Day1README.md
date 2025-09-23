@@ -1,6 +1,9 @@
 # Day 1: Introduction to Verilog RTL Design and Synthesis
 
-# Table of Contents
+This document covers the complete workflow of designing, simulating, and synthesizing a 2:1 multiplexer in Verilog using Yosys and the SkyWater 130nm standard cell library.
+
+
+## Table of Contents
 
 1. [Simulation](#simulation)
     - Design, Testbench, Simulator
@@ -17,7 +20,7 @@
     - Generating Reports and Area Estimation
 3. [Summary](#summary-1)
 
-
+---
 
 ## Simulation
 
