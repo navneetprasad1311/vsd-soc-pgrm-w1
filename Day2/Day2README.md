@@ -1,0 +1,478 @@
+# Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+
+This document introduces three key aspects of RTL design and synthesis.  
+The first is the `.lib` timing library (`sky130_fd_sc_hd__tt_025C_1v80.lib`),  
+an essential part of open-source PDKs that defines timing, power, and functionality.  
+The second is synthesis methodologies, comparing hierarchical and flat approaches  
+while outlining their trade-offs in scalability and optimization.  
+The third is efficient flip-flop coding styles, where proper techniques enhance performance, power use, and synthesis quality.  
+
+---
+
+## Timing Libraries
+
+### SKY130 PDK
+
+The SKY130 PDK (Process Design Kit) provides all the necessary design files, standard cell libraries, and technology data required for ASIC design using the open-source SkyWater 130nm process.  
+It includes `.lib` timing libraries, LEF/DEF files for layout, and GDSII data for fabrication.  
+The `.lib` files, such as `sky130_fd_sc_hd__tt_025C_1v80.lib`, define the timing, power, and functional behavior of each standard cell under different conditions.  
+These timing libraries are crucial for accurate synthesis, static timing analysis, and overall design optimization in digital circuits.
+
+In `.lib` timing libraries like `sky130_fd_sc_hd__tt_025C_1v80.lib`, the filename itself encodes the PVT (Process, Voltage, Temperature) conditions used to characterize the cells. Understanding this naming convention helps correlate the library to the specific conditions:
+
+- **sky130_fd_sc_hd** – Base library name:  
+  - `sky130` → SkyWater 130nm process  
+  - `fd` → Fully Depleted (process type)  
+  - `sc` → Standard Cells  
+  - `hd` → High Density variant  
+
+- **tt** – Process corner:  
+  - `tt` → Typical-Typical (nominal NMOS and PMOS)  
+  - Other possible corners include `ff` (Fast-Fast), `ss` (Slow-Slow), `fs` (Fast-Slow), `sf` (Slow-Fast)
+
+- **025C** – Temperature condition:  
+  - 25°C (room/typical temperature)  
+  - Other libraries may use `-40C` for low or `125C` for high temperature
+
+- **1v80** – Voltage condition:  
+  - 1.80 V supply voltage  
+  - Variations could be `1v62` for lower voltage or `1v98` for higher voltage
+
+So, `sky130_fd_sc_hd__tt_025C_1v80.lib` specifically refers to the High-Density standard cell library for SkyWater 130nm, characterized at **typical process**, **25°C**, and **1.8V**. This systematic naming allows tools to select the appropriate library for synthesis, timing analysis, or corner-based verification.
+
+### Understanding the `lib` file
+
+To open the `sky130_fd_sc_hd.lib`, navigate to the directory where the library is stored. \
+That is, `~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib` 
+This is done using the command,
+
+```bash
+cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+ls
+```
+
+You can inspect the contents of the library using a text editor like `vim`, `nano`, or `gedit`, personally I prefer vim so:
+
+```bash
+vim sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+The `.lib` file contains detailed definitions of each standard cell, including:  
+- **Cell name and type** (e.g., AND, OR, DFF)  
+- **Pin definitions** (input, output, clock)  
+- **Timing information** (setup, hold, propagation delays)  
+- **Power characteristics** (dynamic and leakage power)  
+- **Conditions for PVT corners** (process, voltage, temperature)
+
+By understanding the structure of the `.lib` file, you can analyze cell behavior and ensure accurate synthesis and timing analysis in your RTL design.
+
+
+![Timing library](Timing_lib.png)
+
+---
+
+## Hierarchical vs Flat Synthesis
+
+Synthesis is the process of converting RTL code into a gate-level netlist using standard cells from the library. 
+There are two main approaches: **hierarchical synthesis** and **flat synthesis**, each with its own advantages and trade-offs.
+
+### Hierarchical Synthesis
+- The design is synthesized **module by module**, preserving the hierarchy of the RTL.  
+- **Advantages:**
+  - Easier to debug and manage large designs.
+  - Reusable modules can be synthesized separately.
+  - Reduces runtime and memory usage for very large designs.
+- **Disadvantages:**
+  - May miss some cross-module optimizations.
+  - Overall area or timing may be slightly less optimal compared to flat synthesis.
+
+### Flat Synthesis
+- The entire design is synthesized as a **single flattened block**, ignoring module boundaries.  
+- **Advantages:**
+  - Allows the synthesis tool to optimize across module boundaries.
+  - Can achieve better area, timing, and power optimization.
+- **Disadvantages:**
+  - Requires more memory and runtime for large designs.
+  - Harder to debug or modify specific parts of the design.
+
+In practice, designers often use a **mixed approach**, keeping critical modules hierarchical while flattening performance-critical paths to achieve a balance between manageability and optimization.
+
+Suppose the file `multiple_modules.v` has to be synthesized. The first step is to **locate the file** in your project directory. \
+This is done using,
+```bash
+cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+
+This design contains multiple modules, as shown below:
+
+```verilog
+module sub_module2 (input a, input b, output y);
+	assign y = a | b;
+endmodule
+
+module sub_module1 (input a, input b, output y);
+	assign y = a&b;
+endmodule
+
+
+module multiple_modules (input a, input b, input c , output y);
+	wire net1;
+	sub_module1 u1(.a(a),.b(b),.y(net1));  //net1 = a&b
+	sub_module2 u2(.a(net1),.b(c),.y(y));  //y = net1|c ,ie y = a&b + c;
+endmodule
+```
+
+### Hierarchical Synthesis Workflow
+
+**Hierarchical synthesis of `multiple_modules.v` using Yosys:**
+
+1. **Open the directory where you would want to run the synthesis**
+
+```bash
+cd ~/Documents/Verilog/Labs
+```
+
+2. **Run hierarchical synthesis in Yosys:**  
+
+```bash
+yosys
+```
+
+Inside yosys,
+
+```bash
+read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+dfflibmap -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+synth -top multiple_modules
+show multiple_modules
+show -format png multiple_modules
+write_verilog ~/Documents/Verilog/Labs/multiple_modules_heir.v 
+```
+![Workflow]()
+![yosys_show_multiple_modules]()
+
+
+**Explanation:**  
+- `read_liberty` loads the standard cell timing and power characteristics.  
+- `dfflibmap` ensures flip-flops are mapped to library cells.  
+- `abc` performs technology mapping and logic optimization.  
+- `synth -top` preserves module hierarchy while generating the gate-level netlist.  
+- `write_verilog` outputs the hierarchical netlist ready for further analysis or place-and-route.
+
+This approach keeps sub-modules separate, making it easier to **debug, reuse, and manage large designs**, while still producing a synthesized netlist compatible with the SkyWater 130nm PDK.
+
+3. **Verify the Synthesis**
+
+#### Netlist Dot File:
+
+![Netlist Dot File]()
+
+#### Statistics:
+
+<pre>
+
+=== multiple_modules ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        5 public wires
+        5 public wire bits
+        4 ports
+        4 port bits
+        2 submodules
+        1   sub_module1
+        1   sub_module2
+
+=== sub_module1 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        3 wires
+        3 wire bits
+        3 public wires
+        3 public wire bits
+        3 ports
+        3 port bits
+        1 cells
+        1   $_AND_
+
+=== sub_module2 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        3 wires
+        3 wire bits
+        3 public wires
+        3 public wire bits
+        3 ports
+        3 port bits
+        1 cells
+        1   $_OR_
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+        2 multiple_modules
+        1 sub_module1
+        1 sub_module2
+
+        +----------Count including submodules.
+        | 
+       11 wires
+       11 wire bits
+       11 public wires
+       11 public wire bits
+       10 ports
+       10 port bits
+        - memories
+        - memory bits
+        - processes
+        2 cells
+        1   $_AND_
+        1   $_OR_
+        2 submodules
+        1   sub_module1
+        1   sub_module2
+</pre>
+
+### Flat Synthesis Workflow
+
+**Flat synthesis of `multiple_modules.v` using Yosys:**
+
+1. **Open the directory where you want to run the synthesis**
+
+```bash
+cd ~/Documents/Verilog/Labs
+```
+
+2. **Run flat synthesis in Yosys:**  
+```bash
+yosys
+```
+
+Inside yosys,
+
+```bash
+read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+synth -top multiple_modules
+abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+show multiple_modules
+show -format png multiple_modules
+write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v 
+```
+
+![Flat Synthesis Workflow]()
+![yosys_show_multiple_modules_flat]()
+
+**Explanation:**  
+- `synth -top` generates the gate-level netlist of the flattened design. 
+- `abc` performs technology mapping and logic optimization. 
+- `flatten` removes module hierarchy so the tool can optimize across the entire design.    
+- `write_verilog` outputs the flat netlist ready for further analysis or place-and-route.
+
+3. **Verify the Flat Synthesis**
+
+#### Netlist Dot File:
+
+![Netlist Dot File]()
+
+
+#### Statistics
+
+<pre>
+=== multiple_modules ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        5 public wires
+        5 public wire bits
+        4 ports
+        4 port bits
+        2 submodules
+        1   sub_module1
+        1   sub_module2
+
+=== sub_module1 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        3 wires
+        3 wire bits
+        3 public wires
+        3 public wire bits
+        3 ports
+        3 port bits
+        1 cells
+        1   $_AND_
+
+=== sub_module2 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        3 wires
+        3 wire bits
+        3 public wires
+        3 public wire bits
+        3 ports
+        3 port bits
+        1 cells
+        1   $_OR_
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+        2 multiple_modules
+        1 sub_module1
+        1 sub_module2
+
+        +----------Count including submodules.
+        | 
+       11 wires
+       11 wire bits
+       11 public wires
+       11 public wire bits
+       10 ports
+       10 port bits
+        - memories
+        - memory bits
+        - processes
+        2 cells
+        1   $_AND_
+        1   $_OR_
+        2 submodules
+        1   sub_module1
+        1   sub_module2
+</pre>
+
+
+### Comparision 
+
+![Comparision]()
+
+
+| Feature           | Hierarchical Synthesis       | Flat Synthesis         |
+| ----------------- | ---------------------------- | ---------------------- |
+| **Modules**       | Preserves submodules         | Flattens all into one  |
+| **Optimization**  | Local per module             | Global across design   |
+| **Debugging**     | Easier, hierarchy intact     | Harder, hierarchy lost |
+| **Port Ordering** | Preserved                    | May change             |
+| **Use Case**      | Verification, modular design | Maximum optimization   |
+
+
+
+## Sub-module Synthesis
+
+RTL (Register Transfer Level) designs are typically modular, consisting of multiple functional blocks or sub-modules. Sub-module level synthesis allows each sub-module to be synthesized independently.
+
+**Why is sub-module level synthesis important?**
+
+- **Optimization and Area Reduction:** Synthesizing sub-modules separately allows the tool to optimize each one individually. This includes logic optimization, technology mapping, and area minimization, resulting in more efficient resource usage and a smaller overall chip area.  
+- **Reusability:** Each sub-module can be designed, verified, and optimized independently. They can then be reused across different designs, saving development time and improving efficiency.  
+- **Parallel Processing:** Sub-modules can be synthesized concurrently, which speeds up the synthesis process. For large designs, parallel synthesis can significantly reduce turnaround time.  
+
+**Commands to run sub-module synthesis:**
+
+```bash
+read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v
+synth -top sub_module1
+abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+show -format png
+```
+![Workflow]()
+![yosys_show_submodule1]() 
+
+### Verification of Sub-module Synthesis
+
+#### Netlist Dot File 
+
+![Dot_file_sub]()
+
+#### Statistics 
+
+<pre>
+=== sub_module1 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        3 wires
+        3 wire bits
+        3 public wires
+        3 public wire bits
+        3 ports
+        3 port bits
+        1 cells
+        1   $_AND_
+
+</pre>
+
+---
+
+## Flip-Flop Coding Styles  
+
+1. **Asynchronous Reset Flip-Flop**
+
+```verilog
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        q <= 0;
+    else
+        q <= d;
+end
+```
+  - The output `q` is immediately reset to `0` when `rst` is asserted, regardless of the clock.  
+  - Useful for global resets in FPGA or ASIC designs.
+
+
+2. **Asynchronous Set Flip-Flop**
+```verilog
+always @(posedge clk or posedge set) begin
+    if (set)
+        q <= 1;
+    else
+        q <= d;
+end
+```
+
+  - The output `q` is immediately set to `1` when `set` is asserted, independent of the clock.  
+  - Helps initialize signals to a known state quickly.
+
+
+3. **Synchronous Reset Flip-Flop**
+```verilog
+always @(posedge clk) begin
+    if (rst)
+        q <= 0;
+    else
+        q <= d;
+end
+```
+  - The output `q` is reset to `0` **only on the active clock edge** when `rst` is asserted.  
+  - Keeps all flip-flops aligned with the clock and avoids timing issues.
+
+
+4. **Synchronous Set Flip-Flop**
+```verilog
+always @(posedge clk) begin
+    if (set)
+        q <= 1;
+    else
+        q <= d;
+end
+```
+  - The output `q` is set to `1` **only on the active clock edge** when `set` is asserted.  
+  - Ensures predictable and controlled behavior for sequential logic.
+
+
+
+
