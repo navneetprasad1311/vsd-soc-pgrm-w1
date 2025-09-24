@@ -1,4 +1,4 @@
-# Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+# Day 2 - Timing libs, Hierarchical vs Flat synthesis and Efficient Flop coding styles
 
 This document introduces three key aspects of RTL design and synthesis.  
 The first is the `.lib` timing library (`sky130_fd_sc_hd__tt_025C_1v80.lib`),  
@@ -359,6 +359,9 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v
 ![Comparision](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Comparision.png)
 
 
+Key Differences:
+
+
 | Feature           | Hierarchical Synthesis       | Flat Synthesis         |
 | ----------------- | ---------------------------- | ---------------------- |
 | **Modules**       | Preserves submodules         | Flattens all into one  |
@@ -418,9 +421,9 @@ show -format png
 
 ---
 
-## Flip-Flop Coding Styles  
+## The Various Flip-Flop Coding Styles  
 
- ### 1. **Asynchronous Reset Flip-Flop**
+### 1. **Asynchronous Reset Flip-Flop**
 
 ```verilog
 always @(posedge clk or posedge rst) begin
@@ -473,6 +476,77 @@ end
   - The output `q` is set to `1` **only on the active clock edge** when `set` is asserted.  
   - Ensures predictable and controlled behavior for sequential logic.
 
+---
 
 
+### Synthesis and Simulation of Flip-FLops
+
+#### **Simulation**
+
+Firstly, iverilog simulation of the flipflop is done, to verify its functionality 
+
+Locate the file in the `verilog_files` folder
+
+```bash
+cd Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+
+```bash
+iverilog -o ~/Documents/Verilog/Labs/dff_syncres.vvp dff_syncres.v tb_dff_syncres.v
+```
+
+Then, in the labs folder, run the compiled file
+
+```bash
+cd ~/Documents/Verilog/Labs
+vvp dff_syncres.vvp
+```
+
+Now, run the `.vcd` file through GTKWave and check its waveform
+
+```bash
+gtkwave tb_dff_syncres.vcd
+```
+
+![Waveform]()
+
+#### **Synthesis**
+
+Synthesis is done through yosys by following these commands.
+
+```bash
+yosys
+```
+to run yosys
+
+```bash
+read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/dff_syncres.v
+synth -top dff_syncres
+dfflibmap -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+show -format png
+```
+
+![Synthesis]()
+
+
+## Summary
+
+- **Timing Libraries:**  
+  - `.lib` files (e.g., `sky130_fd_sc_hd__tt_025C_1v80.lib`) define standard cell timing and characteristics used for accurate synthesis and timing analysis.
+
+- **Synthesis Approaches:**  
+  - **Hierarchical Synthesis:** Synthesizes sub-modules individually; allows better optimization and area control.  
+  - **Flat Synthesis:** Synthesizes the entire design at once; simpler but may miss local optimization opportunities.  
+  - Flattening can be done post-hierarchical synthesis if needed.
+
+- **Efficient Flip-Flop Coding Styles:**  
+  - **Asynchronous Reset/Set:** Immediate response, independent of clock; useful for global initialization.  
+  - **Synchronous Reset/Set:** Changes occur only on clock edge; ensures predictable timing and avoids hazards.  
+
+- **Simulation & Synthesis Workflow:**  
+  - **Simulation:** `iverilog` → `vvp` → `GTKWave`.  
+  - **Synthesis (Yosys):** Load library → read Verilog → `synth` → `dfflibmap` → `abc` → `show`.
 
