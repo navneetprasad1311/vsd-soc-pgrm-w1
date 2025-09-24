@@ -256,12 +256,14 @@ abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_
 ### Step 5: Visualize the Netlist
 
 ```bash
-show  
+show good_mux
 ```
 
 > [!TIP]  
 > You can save the visualization to a png file \
 > `show -format png good_mux_netlist.png good_mux.v`, saves PNG in the directory
+
+[yosys_show]()
 
 ---
 
