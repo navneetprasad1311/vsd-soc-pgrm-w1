@@ -178,7 +178,7 @@ abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_
 synth -top multiple_modules
 show multiple_modules
 show -format png multiple_modules
-write_verilog ~/Documents/Verilog/Labs/multiple_modules_heir.v 
+write_verilog ~/Documents/Verilog/Labs/multiple_modules_hier.v 
 ```
 ![Workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Workflow.png)
 ![yosys_show_multiple_modules](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_show_mutliple_modules.png)
@@ -384,9 +384,9 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v
 </pre>
 
 
-### Comparision 
+### Comparison 
 
-![Comparision](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Comparision.png)
+![Comparison](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Comparison.png)
 
 
 Key Differences:
