@@ -508,7 +508,9 @@ Now, run the `.vcd` file through GTKWave and check its waveform
 gtkwave tb_dff_syncres.vcd
 ```
 
-![Waveform]()
+Waveform:
+
+![Waveform](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Waveform.png)
 
 #### **Synthesis**
 
@@ -529,7 +531,9 @@ show
 show -format png
 ```
 
-![Synthesis]()
+Netlist:
+
+![Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_dffsyncres.png)
 
 
 ## Summary
