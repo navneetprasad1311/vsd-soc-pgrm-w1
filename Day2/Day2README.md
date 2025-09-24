@@ -67,7 +67,7 @@ The `.lib` file contains detailed definitions of each standard cell, including:
 By understanding the structure of the `.lib` file, you can analyze cell behavior and ensure accurate synthesis and timing analysis in your RTL design.
 
 
-![Timing library](Timing_lib.png)
+![Timing library](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Timing_lib.png)
 
 ---
 
@@ -150,8 +150,8 @@ show multiple_modules
 show -format png multiple_modules
 write_verilog ~/Documents/Verilog/Labs/multiple_modules_heir.v 
 ```
-![Workflow]()
-![yosys_show_multiple_modules]()
+![Workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Workflow.png)
+![yosys_show_multiple_modules](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_show_mutliple_modules.png)
 
 
 **Explanation:**  
@@ -267,8 +267,8 @@ show -format png multiple_modules
 write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v 
 ```
 
-![Flat Synthesis Workflow]()
-![yosys_show_multiple_modules_flat]()
+![Flat Synthesis Workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Workflow_flat.png)
+![yosys_show_multiple_modules_flat](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_show_multiple_modules_flat.png)
 
 **Explanation:**  
 - `synth -top` generates the gate-level netlist of the flattened design. 
@@ -280,7 +280,7 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v
 
 #### Netlist Dot File:
 
-![Netlist Dot File]()
+![Netlist Dot File](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Dot_file_flat.png)
 
 
 #### Statistics
@@ -356,7 +356,7 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v
 
 ### Comparision 
 
-![Comparision]()
+![Comparision](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Comparision.png)
 
 
 | Feature           | Hierarchical Synthesis       | Flat Synthesis         |
@@ -389,14 +389,14 @@ abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_
 show
 show -format png
 ```
-![Workflow]()
-![yosys_show_submodule1]() 
+![Workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Workflow-sub.png)
+![yosys_show_submodule1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_show_multiple_submodule1.png) 
 
 ### Verification of Sub-module Synthesis
 
 #### Netlist Dot File 
 
-![Dot_file_sub]()
+![Dot_file_sub](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Dot_file_sub.png)
 
 #### Statistics 
 
