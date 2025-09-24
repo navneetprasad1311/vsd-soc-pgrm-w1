@@ -73,11 +73,11 @@ So, `sky130_fd_sc_hd__tt_025C_1v80.lib` specifically refers to the High-Density 
 ### Understanding the `lib` file
 
 To open the `sky130_fd_sc_hd.lib`, navigate to the directory where the library is stored. \
-That is, `~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib` 
+That is, `~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib` 
 This is done using the command,
 
 ```bash
-cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib
 ls
 ```
 
