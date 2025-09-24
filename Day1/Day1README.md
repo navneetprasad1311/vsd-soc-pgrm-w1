@@ -263,7 +263,7 @@ show good_mux
 > You can save the visualization to a png file \
 > `show -format png good_mux_netlist.png good_mux.v`, saves PNG in the directory
 
-[yosys_show]()
+[yosys_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/Images/yosys_show.png)
 
 ---
 
