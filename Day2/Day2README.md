@@ -126,13 +126,13 @@ endmodule
 
 **Hierarchical synthesis of `multiple_modules.v` using Yosys:**
 
-1. **Open the directory where you would want to run the synthesis**
+### 1. **Open the directory where you would want to run the synthesis**
 
 ```bash
 cd ~/Documents/Verilog/Labs
 ```
 
-2. **Run hierarchical synthesis in Yosys:**  
+### 2. **Run hierarchical synthesis in Yosys:**  
 
 ```bash
 yosys
@@ -163,7 +163,7 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_heir.v
 
 This approach keeps sub-modules separate, making it easier to **debug, reuse, and manage large designs**, while still producing a synthesized netlist compatible with the SkyWater 130nm PDK.
 
-3. **Verify the Synthesis**
+### 3. **Verify the Synthesis**
 
 #### Netlist Dot File:
 
@@ -244,13 +244,13 @@ This approach keeps sub-modules separate, making it easier to **debug, reuse, an
 
 **Flat synthesis of `multiple_modules.v` using Yosys:**
 
-1. **Open the directory where you want to run the synthesis**
+### 1. **Open the directory where you want to run the synthesis**
 
 ```bash
 cd ~/Documents/Verilog/Labs
 ```
 
-2. **Run flat synthesis in Yosys:**  
+### 2. **Run flat synthesis in Yosys:**  
 ```bash
 yosys
 ```
@@ -276,7 +276,7 @@ write_verilog ~/Documents/Verilog/Labs/multiple_modules_flat.v
 - `flatten` removes module hierarchy so the tool can optimize across the entire design.    
 - `write_verilog` outputs the flat netlist ready for further analysis or place-and-route.
 
-3. **Verify the Flat Synthesis**
+### 3. **Verify the Flat Synthesis**
 
 #### Netlist Dot File:
 
@@ -420,7 +420,7 @@ show -format png
 
 ## Flip-Flop Coding Styles  
 
-1. **Asynchronous Reset Flip-Flop**
+ ### 1. **Asynchronous Reset Flip-Flop**
 
 ```verilog
 always @(posedge clk or posedge rst) begin
@@ -434,7 +434,7 @@ end
   - Useful for global resets in FPGA or ASIC designs.
 
 
-2. **Asynchronous Set Flip-Flop**
+### 2. **Asynchronous Set Flip-Flop**
 ```verilog
 always @(posedge clk or posedge set) begin
     if (set)
@@ -448,7 +448,7 @@ end
   - Helps initialize signals to a known state quickly.
 
 
-3. **Synchronous Reset Flip-Flop**
+### 3. **Synchronous Reset Flip-Flop**
 ```verilog
 always @(posedge clk) begin
     if (rst)
@@ -461,7 +461,7 @@ end
   - Keeps all flip-flops aligned with the clock and avoids timing issues.
 
 
-4. **Synchronous Set Flip-Flop**
+### 4. **Synchronous Set Flip-Flop**
 ```verilog
 always @(posedge clk) begin
     if (set)
