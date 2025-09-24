@@ -295,7 +295,7 @@ This prints a summary of the synthesized design (cells used, area, etc.).
 
 ### Synthesis Outputs
 
-#### Netlish Dot File:
+#### Netlist Dot File:
 
 ![Dot File](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/Images/Dot_file.png)
 
