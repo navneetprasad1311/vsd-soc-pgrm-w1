@@ -167,7 +167,7 @@ This approach keeps sub-modules separate, making it easier to **debug, reuse, an
 
 #### Netlist Dot File:
 
-![Netlist Dot File]()
+![Netlist Dot File](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Dot_file.png)
 
 #### Statistics:
 
