@@ -517,9 +517,10 @@ Waveform:
 Synthesis is done through yosys by following these commands.
 
 ```bash
-yosys
+yosys #to run yosys
 ```
-to run yosys
+
+Then, inside yosys
 
 ```bash
 read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
