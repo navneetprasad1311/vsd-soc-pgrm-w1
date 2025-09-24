@@ -9,6 +9,36 @@ The third is efficient flip-flop coding styles, where proper techniques enhance 
 
 ---
 
+## Table of Contents
+
+1. [**Timing Libraries**](#timing-libraries) 
+   - SKY130 PDK  
+   - Understanding `.lib` files (`sky130_fd_sc_hd__tt_025C_1v80.lib`)  
+   - File inspection and contents  
+
+2. [**Hierarchical vs Flat Synthesis**](#hierarchical-vs-flat-synthesis) 
+   - Hierarchical Synthesis  
+     - Workflow, commands, and verification  
+   - Flat Synthesis  
+     - Workflow, commands, and verification  
+   - Comparison Table  
+   - Sub-module Level Synthesis  
+     - Importance, workflow, and verification  
+
+3. [**Flip-Flop Coding Styles**](#the-various-flip-flop-coding-styles) 
+   - Asynchronous Reset/Set  
+   - Synchronous Reset/Set  
+
+4. [**Simulation and Synthesis of Flip-Flops**](#synthesis-and-simulation-of-flip-flops)  
+   - Simulation workflow (`iverilog` → `vvp` → `GTKWave`)  
+   - Synthesis workflow (Yosys commands, netlist visualization)  
+
+5. [**Summary**](#summary)
+   - Key takeaways on timing libraries, synthesis approaches, and flip-flop coding
+
+
+---
+
 ## Timing Libraries
 
 ### SKY130 PDK
