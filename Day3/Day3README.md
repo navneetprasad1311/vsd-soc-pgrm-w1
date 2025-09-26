@@ -127,7 +127,7 @@ Running synthesis would get you this optimised Netlist, represented by this dot 
 ![opt_check_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check_show.png)
 
 
-### `opt_check2`
+### `opt_check2.v`
 
 **Verilog Code:**
 
@@ -144,7 +144,7 @@ This essentially is just `OR` function of a and b.
 ![opt_check2_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check2_show.png)
 
 
-### `opt_check3`
+### `opt_check3.v`
 
 **Verilog Code:**
 
@@ -228,7 +228,7 @@ retiming moves some registers so the logic is balanced more evenly.
  
 ## Labs on Sequential Logic Optimization 
 
-## `dff_const1`
+## `dff_const1.v`
 
 **Verilog Code**
 ```verilog
@@ -254,7 +254,7 @@ This D flip-flop has:
 ![dff_const1_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/dff_const1_show.png)
 
 
-## `dff_const2`
+## `dff_const2.v`
 
 **Verilog Code**
 ```verilog
@@ -285,7 +285,7 @@ Running synthesis will generate the optimized netlist, which can be represented 
 
 ![dff_const2_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/dff_const2_show.png)
 
-## `dff_const3`
+## `dff_const3.v`
 
 **Verilog Code**
 ```verilog
@@ -348,4 +348,3 @@ Running synthesis will generate the optimized netlist, which can be represented 
 ### Tools
 - `opt_clean -purge` in Yosys
 - Reduces gates, power, critical path; preserves functionality
-
