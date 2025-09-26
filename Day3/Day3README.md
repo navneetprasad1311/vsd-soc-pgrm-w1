@@ -45,8 +45,6 @@ replaces those signals with their constant equivalents and simplifies the logic 
 - Reduces gate count and power usage.
 - Simplifies design, enabling further optimizations like dead code elimination.
 
-![ConstantPropagation](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/Constant%20Propagation.png)
-
 ---
 
 ## 2. Boolean Logic Optimization
@@ -89,6 +87,12 @@ vim opt_check.v
 
 ![opt_check](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check.png)
 
+```verilog 
+module opt_check (input a , input b , output y);
+        assign y = a?b:0;
+endmodule
+```
+
 **Functionality**
 
 We see that the logic is 
@@ -111,13 +115,10 @@ opt_clean -purge
 
 > [!Note]
 > This performs logic optimization and cleanup with complete removal of unused elements.
-
 > - **opt_clean**:  
 >  - Optimizes the design by removing **unused wires, cells, and trivial logic** (like buffers or redundant gates).
-
 > - **-purge**:  
 >  - Completely removes anything **not connected to outputs**, including dead wires, cells, or modules.
-
 > **Effect:**  
 > The netlist becomes **smaller, cleaner, and free of unused/redundant elements**, reducing area and improving synthesis results.
 
