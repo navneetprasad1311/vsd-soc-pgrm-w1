@@ -45,7 +45,7 @@ replaces those signals with their constant equivalents and simplifies the logic 
 - Reduces gate count and power usage.
 - Simplifies design, enabling further optimizations like dead code elimination.
 
-![ConstantPropagation]()
+![ConstantPropagation](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/Constant%20Propagation.png)
 
 ---
 
@@ -87,7 +87,7 @@ vim opt_check.v
 ```
 **Verilog Code**
 
-![opt_check]()
+![opt_check](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check.png)
 
 **Functionality**
 
@@ -123,7 +123,7 @@ opt_clean -purge
 
 Running synthesis would get you this optimised Netlist, represented by this dot file.
 
-![opt_check_show]()
+![opt_check_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check_show.png)
 
 
 ### `opt_check2`
@@ -140,7 +140,7 @@ This essentially is just `OR` function of a and b.
 
 **Logic Optimisation in Yosys:**
 
-![opt_check2_show]()
+![opt_check2_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check2_show.png)
 
 
 ### `opt_check3`
@@ -157,7 +157,7 @@ This performs `AND` operation between inputs a, b and c. We can verify this thro
 
 **Logic Optimisation in Yosys:**
 
-![opt_check3_show]()
+![opt_check3_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/opt_check3_show.png)
 
 ---
 
@@ -250,7 +250,7 @@ This D flip-flop has:
 
 **Logic Optimization in Yosys**
 
-![dff_const1_show]()
+![dff_const1_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/dff_const1_show.png)
 
 
 ## `dff_const2`
@@ -282,7 +282,7 @@ In short, this flip-flop behaves like a **constant logic 1** generator.
 
 Running synthesis will generate the optimized netlist, which can be represented in a dot file:
 
-![dff_check2_show]()
+![dff_const2_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/dff_const2_show.png)
 
 ## `dff_const3`
 
@@ -327,7 +327,7 @@ In short, `q` produces a **one-cycle delayed transition from 1 to 1**, starting 
 
 Running synthesis will generate the optimized netlist, which can be represented in a dot file:
 
-![dff_const3_show]()
+![dff_const3_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/Images/dff_const3_show.png)
 
 ---
 
