@@ -172,10 +172,10 @@ Inside yosys,
 
 ```bash
 read_liberty -lib ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v 
+read_verilog ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files/multiple_modules.v
+synth -top multiple_modules
 dfflibmap -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
 abc -liberty ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
-synth -top multiple_modules
 show multiple_modules
 show -format png multiple_modules
 write_verilog ~/Documents/Verilog/Labs/multiple_modules_hier.v 
