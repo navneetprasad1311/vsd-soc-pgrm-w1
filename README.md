@@ -8,11 +8,9 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 ## Table of Contents
 
 1. [Roadmap](#roadmap)
-2. [Day-Wise README](#day-wise-folders)
+2. [Day-Wise Labs](#day-wise-labs)
 3. [Summary](#summary)
 4. [Notes / Troubleshooting](#notes--troubleshooting)
-
-
 
 
 ## Roadmap
@@ -26,9 +24,10 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 | Day 5 | Optimizations in synthesis | Conditions and Loops                 |
 
 
-## Day-Wise Folders
- - [Day 1: Introduction to Verilog RTL design and synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/Day1README.md)
- - [Day 2: Timing libs, Hierarchical vs Flat synthesis and Efficient Flop coding styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Day2README.md)
+## Day-Wise Labs
+ - [Day 1: Introduction to Verilog RTL design and synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/README.md)
+ - [Day 2: Timing libs, Hierarchical vs Flat synthesis and Efficient Flop coding styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md)
+ - [Day 3: Combinational and Sequential Optimizations](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/README.md)
  
 
 
