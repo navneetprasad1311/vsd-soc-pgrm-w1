@@ -10,7 +10,8 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 1. [Roadmap](#roadmap)
 2. [Day-Wise Labs](#day-wise-labs)
 3. [Summary](#summary)
-4. [Notes / Troubleshooting](#notes--troubleshooting)
+4. [Notes](#notes)
+5. [Contributor](#contributor)
 
 
 ## Roadmap
@@ -29,19 +30,29 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
  - [Day 2: Timing libs, Hierarchical vs Flat synthesis and Efficient Flop coding styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md)
  - [Day 3: Combinational and Sequential Optimizations](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/README.md)
  - [Day 4 - GLS, Blocking vs Non-blocking and Synthesis-Simulation mismatch](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/README.md)
- 
+ - [Day 5 - Optimization in Synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/README.md)
+
 
 
 ## Summary
+- **Day 1**: Covers the basics of Verilog *RTL design and synthesis*, introducing how RTL descriptions are mapped to hardware.
+
+- **Day 2**: Focuses on *timing libraries*, *hierarchical* vs *flat synthesis* approaches, and efficient coding styles for flip-flops.
+
+- **Day 3**: Explains combinational and sequential *optimizations in synthesis* to improve *logic* and *efficiency*.
+
+- **Day 4**: Discusses *gate-level simulation (GLS)*, the differences between *blocking and non-blocking assignments*, and *synthesis-simulation mismatches*.
+
+- **Day 5**: Explores optimization in synthesis, covering *conditional constructs* (if-else, case), *inferred latches*, *partial assignments*, *loops*, and *generate constructs*.
 
 
-
-## Notes / Troubleshooting
-
+## Notes
+- **File Organization:** All synthesized netlists and compiled Verilog files are stored in the `~Documents/Verilog/Labs` folder for easy access and reference.  
+- **Snapshots & Documentation:** All simulation waveforms, netlist snapshots, and related screenshots are unique and original.
 
 
 ## Contributor
-  Navneet Prasad ([navneetprasad1311](https://linkedin.com/in/navneetprasad1311)) 
+  Navneet Prasad ([LinkedIn](https://linkedin.com/in/navneetprasad1311)) 
 
 ---
 
