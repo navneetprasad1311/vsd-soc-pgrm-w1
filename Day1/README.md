@@ -200,6 +200,7 @@ Synthesis converts the RTL (Register Transfer Level) description written in Veri
 ---
 
 ### Flow of Synthesis
+
 1. Write the RTL design in Verilog.  
 2. Choose a target technology library (e.g., `sky130_fd_sc_hd`).  
 3. Run synthesis using Yosys, which translates the RTL into logic gates. 
@@ -340,3 +341,10 @@ In this section, we performed **RTL-to-gate-level synthesis** of `good_mux.v` us
 6. **Generating synthesis reports** (`stat`) to check cell count, area, and other metrics.  
 
 This flow demonstrates the complete synthesis cycle: **read design -> synthesize -> map -> visualize -> save netlist -> analyze reports**, ensuring both functional correctness and readiness for further backend flows such as placement and routing.
+
+---
+
+> [!Note]
+> For convenience and organized access, all netlist and compiled Verilog files have been stored in the `~/Documents/Verilog/Labs` folder, facilitating efficient simulation and verification.
+
+---
