@@ -1,0 +1,145 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6337c4bb2ff0 .scope module, "tb_demux_generate" "tb_demux_generate" 2 4;
+ .timescale -9 -12;
+v0x6337c4bcaaf0_0 .var "clk", 0 0;
+v0x6337c4bcabd0_0 .var "i", 0 0;
+v0x6337c4bcac90_0 .net "o0", 0 0, L_0x6337c4bcbbc0;  1 drivers
+v0x6337c4bcad90_0 .net "o1", 0 0, L_0x6337c4bcbad0;  1 drivers
+v0x6337c4bcae60_0 .net "o2", 0 0, L_0x6337c4bcb9a0;  1 drivers
+v0x6337c4bcaf00_0 .net "o3", 0 0, L_0x6337c4bcb900;  1 drivers
+v0x6337c4bcafd0_0 .net "o4", 0 0, L_0x6337c4bcb750;  1 drivers
+v0x6337c4bcb0a0_0 .net "o5", 0 0, L_0x6337c4bcb660;  1 drivers
+v0x6337c4bcb170_0 .net "o6", 0 0, L_0x6337c4bcb520;  1 drivers
+v0x6337c4bcb240_0 .net "o7", 0 0, L_0x6337c4bcb480;  1 drivers
+v0x6337c4bcb310_0 .var "reset", 0 0;
+v0x6337c4bcb3b0_0 .var "sel", 2 0;
+E_0x6337c4bb0bd0 .event posedge, v0x6337c4bcb310_0, v0x6337c4bcaaf0_0;
+S_0x6337c4bb31a0 .scope module, "uut" "demux_generate" 2 16, 3 2 0, S_0x6337c4bb2ff0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o0";
+    .port_info 1 /OUTPUT 1 "o1";
+    .port_info 2 /OUTPUT 1 "o2";
+    .port_info 3 /OUTPUT 1 "o3";
+    .port_info 4 /OUTPUT 1 "o4";
+    .port_info 5 /OUTPUT 1 "o5";
+    .port_info 6 /OUTPUT 1 "o6";
+    .port_info 7 /OUTPUT 1 "o7";
+    .port_info 8 /INPUT 3 "sel";
+    .port_info 9 /INPUT 1 "i";
+v0x6337c4b77210_0 .net *"_ivl_10", 7 0, v0x6337c4bca870_0;  1 drivers
+v0x6337c4bc9fc0_0 .net "i", 0 0, v0x6337c4bcabd0_0;  1 drivers
+v0x6337c4bca080_0 .var/i "k", 31 0;
+v0x6337c4bca140_0 .net "o0", 0 0, L_0x6337c4bcbbc0;  alias, 1 drivers
+v0x6337c4bca200_0 .net "o1", 0 0, L_0x6337c4bcbad0;  alias, 1 drivers
+v0x6337c4bca310_0 .net "o2", 0 0, L_0x6337c4bcb9a0;  alias, 1 drivers
+v0x6337c4bca3d0_0 .net "o3", 0 0, L_0x6337c4bcb900;  alias, 1 drivers
+v0x6337c4bca490_0 .net "o4", 0 0, L_0x6337c4bcb750;  alias, 1 drivers
+v0x6337c4bca550_0 .net "o5", 0 0, L_0x6337c4bcb660;  alias, 1 drivers
+v0x6337c4bca610_0 .net "o6", 0 0, L_0x6337c4bcb520;  alias, 1 drivers
+v0x6337c4bca6d0_0 .net "o7", 0 0, L_0x6337c4bcb480;  alias, 1 drivers
+v0x6337c4bca790_0 .net "sel", 2 0, v0x6337c4bcb3b0_0;  1 drivers
+v0x6337c4bca870_0 .var "y_int", 7 0;
+E_0x6337c4bb1180 .event edge, v0x6337c4bca790_0, v0x6337c4bc9fc0_0;
+L_0x6337c4bcb480 .part v0x6337c4bca870_0, 7, 1;
+L_0x6337c4bcb520 .part v0x6337c4bca870_0, 6, 1;
+L_0x6337c4bcb660 .part v0x6337c4bca870_0, 5, 1;
+L_0x6337c4bcb750 .part v0x6337c4bca870_0, 4, 1;
+L_0x6337c4bcb900 .part v0x6337c4bca870_0, 3, 1;
+L_0x6337c4bcb9a0 .part v0x6337c4bca870_0, 2, 1;
+L_0x6337c4bcbad0 .part v0x6337c4bca870_0, 1, 1;
+L_0x6337c4bcbbc0 .part v0x6337c4bca870_0, 0, 1;
+    .scope S_0x6337c4bb31a0;
+T_0 ;
+    %wait E_0x6337c4bb1180;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x6337c4bca870_0, 0, 8;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x6337c4bca080_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v0x6337c4bca080_0;
+    %cmpi/s 8, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/vec4 v0x6337c4bca080_0;
+    %load/vec4 v0x6337c4bca790_0;
+    %pad/u 32;
+    %cmp/e;
+    %jmp/0xz  T_0.2, 4;
+    %load/vec4 v0x6337c4bc9fc0_0;
+    %ix/getv/s 4, v0x6337c4bca080_0;
+    %store/vec4 v0x6337c4bca870_0, 4, 1;
+T_0.2 ;
+    ; show_stmt_assign_vector: Get l-value for compressed += operand
+    %load/vec4 v0x6337c4bca080_0;
+    %pushi/vec4 1, 0, 32;
+    %add;
+    %store/vec4 v0x6337c4bca080_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x6337c4bb2ff0;
+T_1 ;
+    %vpi_call 2 30 "$dumpfile", "tb_demux_generate.vcd" {0 0 0};
+    %vpi_call 2 31 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x6337c4bb2ff0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6337c4bcabd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6337c4bcaaf0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6337c4bcb310_0, 0, 1;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6337c4bcb310_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6337c4bcb310_0, 0, 1;
+    %delay 3900000, 0;
+    %vpi_call 2 39 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x6337c4bb2ff0;
+T_2 ;
+    %delay 17000, 0;
+    %load/vec4 v0x6337c4bcabd0_0;
+    %inv;
+    %store/vec4 v0x6337c4bcabd0_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x6337c4bb2ff0;
+T_3 ;
+    %delay 300000, 0;
+    %load/vec4 v0x6337c4bcaaf0_0;
+    %inv;
+    %store/vec4 v0x6337c4bcaaf0_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x6337c4bb2ff0;
+T_4 ;
+    %wait E_0x6337c4bb0bd0;
+    %load/vec4 v0x6337c4bcb310_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.0, 8;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0x6337c4bcb3b0_0, 0;
+    %jmp T_4.1;
+T_4.0 ;
+    %load/vec4 v0x6337c4bcb3b0_0;
+    %addi 1, 0, 3;
+    %assign/vec4 v0x6337c4bcb3b0_0, 0;
+T_4.1 ;
+    %jmp T_4;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_demux_generate.v";
+    "demux_generate.v";
