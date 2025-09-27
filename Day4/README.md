@@ -7,23 +7,23 @@ This document covers Gate-Level Simulation (GLS) to verify post-synthesis behavi
 1. [Gate-Level Simulation (GLS)](#gate-level-simulation-gls)
  
 2. [Synthesis-Simulation Mismatch](#synthesis-simulation-mismatch)
-   2.1 Sensitivity List Issues    
-   2.2 Blocking and Non-blocking Statements in Verilog  
-   2.3 Caveats with Blocking Statements  
+   - 2.1 Sensitivity List Issues    
+   - 2.2 Blocking and Non-blocking Statements in Verilog  
+   - 2.3 Caveats with Blocking Statements  
 
 3. [Labs on Gate-Level Simulation](#labs-on-gate-level-simulation) 
-   3.1 [`ternary_operator_mux.v`](#ternary_operator_muxv)
+   - 3.1 [`ternary_operator_mux.v`](#ternary_operator_muxv)
        - Verilog Code  
        - RTL Simulation  
        - Gate-level Simulation  
 
 4. [Labs on Synthesis-Simulation Mismatch](#labs-on-synthesis-simulation-mismatch)
-   4.1 [`bad_mux.v`](#bad_muxv) 
+   - 4.1 [`bad_mux.v`](#bad_muxv) 
        - Verilog Code  
        - RTL Simulation  
        - Gate-level Simulation  
        - Comparison  
-   4.2 [`blocking_caveat.v`](#blocking_caveatv)
+   - 4.2 [`blocking_caveat.v`](#blocking_caveatv)
        - Verilog Code  
        - RTL Simulation  
        - Gate-level Simulation  
