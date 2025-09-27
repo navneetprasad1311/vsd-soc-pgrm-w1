@@ -610,3 +610,8 @@ Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-
 Overall, careful use of conditional constructs and loops helps write clean, latch-free, and scalable Verilog code.
 
 ---
+
+> [!Note]
+> Refer [Synthesis in Yosys](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md#2-run-hierarchical-synthesis-in-yosys) for synthesis steps.
+
+---

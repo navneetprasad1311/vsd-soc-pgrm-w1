@@ -350,3 +350,8 @@ Running synthesis will generate the optimized netlist, which can be represented 
 - Reduces gates, power, critical path; preserves functionality
 
 ---
+
+> [!Note]
+> Refer [Synthesis in Yosys](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md#2-run-hierarchical-synthesis-in-yosys) for synthesis steps.
+
+---

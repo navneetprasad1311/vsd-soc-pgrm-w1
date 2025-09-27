@@ -77,7 +77,7 @@ Cons:
 - Hardware will behave correctly, causing a mismatch with simulation.
 
 **Fix:**
-- Use "always @(*)" in Verilog or "always_comb" in SystemVerilog.
+- Use "always @(*)" in Verilog.
 - This ensures all relevant inputs are included automatically.
 - Example:
     ```verilog
@@ -136,12 +136,12 @@ Cons:
   * Incorrect register inference or unintended behavior.
 
 **Example:**
-    ```verilog
+  ```verilog
     always @(posedge clk) begin
        q = d;
        r = q;   // r uses the updated value of q immediately
     end
-    ```
+  ```
 - In real hardware, both q and r would be updated simultaneously by flip-flops,
   but blocking statements simulate sequential updates, causing mismatch.
 
@@ -347,3 +347,9 @@ Fix: Use non-blocking (<=) or split into separate always blocks for combinationa
   * Best practice: use = for combinational, <= for sequential.
 - Blocking Caveats: Using = in clocked blocks causes order-dependent mismatches (e.g., register inference errors). Fix: use <= or restructure.
 
+---
+
+> [!Note]
+> Refer [Synthesis in Yosys](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md#2-run-hierarchical-synthesis-in-yosys) for synthesis steps.
+
+---

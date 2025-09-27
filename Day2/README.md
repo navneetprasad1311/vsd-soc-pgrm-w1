@@ -181,6 +181,9 @@ show multiple_modules
 show -format png multiple_modules
 write_verilog ~/Documents/Verilog/Labs/multiple_modules_hier.v 
 ```
+
+_Workflow_:
+
 ![Workflow](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/Workflow.png)
 ![yosys_show_multiple_modules](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/Images/yosys_show_mutliple_modules.png)
 
