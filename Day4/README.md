@@ -1,4 +1,4 @@
-# Day 4 - GLS, Blocking vs Non-blocking and Synthesis-Simulation mismatch
+# Day 4 - GLS, Blocking vs Non-blocking and Synthesis-Simulation Mismatch
 
 This document covers Gate-Level Simulation (GLS) to verify post-synthesis behavior, and explores common Synthesis-Simulation mismatches caused by sensitivity lists and blocking vs non-blocking assignments in Verilog.
 
@@ -272,7 +272,7 @@ _Waveform_ :
 
 ![comparison](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/comparison.png)
 
-Clearly, we see that when `sel` is low, the activity of `i0` is reflected on `y` in case of the Gate-level Simulation, whereas the output `y` has not changed with respect to `i0` in RTL Simulation.\
+When `sel` is low, changes in `i0` affect `y` in *Gate-Level Simulation*, but not in *RTL simulation* due to incomplete sensitivity list. \
 Thus resulting in **Synthesis-Simulation Mismatch**
 
 ---

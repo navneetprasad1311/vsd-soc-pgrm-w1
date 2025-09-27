@@ -1,5 +1,7 @@
 # Day 5 - Optimization in Synthesis
 
+This documentation covers optimization techniques in Verilog synthesis. Focusing on proper use of conditional constructs (if-else, case), avoiding inferred latches, and using loops (for and generate-for) for scalable, clean, and synthesizable designs.
+
 ## Table of Contents  
   
 1. [**Verilog Conditional Constructs**](#verilog-conditional-constructs-if-else-and-case-statements)

@@ -101,7 +101,7 @@ We see that the logic is
     y =  a ? b : 0
 </pre>
 
-This is simply an AND gate made with complicated logic, let us optimise it. \
+This is effectively an *AND* operation expressed in a more complicated way, we can optimize it.\
 Synthesise it through yosys by following the steps given in Day 2 \
 Make sure you add the below line between `synth -top` and `abc -liberty`
 
@@ -275,7 +275,7 @@ endmodule
 - **Asynchronous reset to 1**: When `reset` is high, `q` is set to `1`.  
 - **Constant output 1**: On every positive clock edge (when not in reset), `q` is also set to `1`.  
 
-Effectively, **`q` is always `1`**, regardless of the clock or reset.  
+Effectively, `q` outputs constant `logic 1` under all conditions. 
 
 In short, this flip-flop behaves like a **constant logic 1** generator.
 

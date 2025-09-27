@@ -8,7 +8,7 @@ This document covers the complete workflow of designing, simulating, and synthes
 1. [Simulation](#simulation)
     - Design, Testbench, Simulator
     - Simulation Flow
-    - Compiling and Running good_mux.v
+    - Compiling and Running `good_mux.v`
     - Viewing Waveforms in GTKWave
     - Verifying Results
 2. [Synthesis](#synthesis-of-good_muxv)
@@ -43,7 +43,7 @@ To perform simulation in Verilog, we need to understand its three fundamental co
 
 ## Lab Simulation & Synthesis
 
-The Verilog programs are cloned from the [sky130RTLDesignAndSynthesisWorkshop](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop/tree/main/verilog_files) repository.  
+The Verilog programs are cloned from the [`sky130RTLDesignAndSynthesisWorkshop`](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop/tree/main/verilog_files) repository.  
 This repository also contains library files and Yosys run scripts which will help automate synthesis later.
 
 To clone the repository, run:
@@ -53,7 +53,7 @@ cd ~/Documents/Verilog
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop  
 ```
 
-Once downloaded, go into the files and list them:
+After cloning, navigate to the Verilog files directory and list the contents.
 ```bash
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files  
 ls  
@@ -77,7 +77,7 @@ cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ls  
 ```
 
-Make sure you can see `good_mux.v` and `tb_good_mux.v` listed.
+Verify that good_mux.v and tb_good_mux.v are present.
 
 #### Verilog Code Analysis
 

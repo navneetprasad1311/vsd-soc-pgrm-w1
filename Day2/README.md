@@ -81,7 +81,8 @@ cd ~/Documents/Verilog/sky130RTLDesignAndSynthesisWorkshop/lib
 ls
 ```
 
-You can inspect the contents of the library using a text editor like `vim`, `nano`, or `gedit`, personally I prefer vim so:
+You can inspect the contents of the library using a text editor like `vim`, `nano`, or `gedit`. \
+For example, you can open it using `vim` by following this command,
 
 ```bash
 vim sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -513,7 +514,7 @@ end
 
 #### **Simulation**
 
-Firstly, iverilog simulation of the flipflop is done, to verify its functionality 
+First, the flip-flop functionality is verified using **Icarus Verilog** simulation.
 
 Locate the file in the `verilog_files` folder
 
@@ -544,10 +545,10 @@ Waveform:
 
 #### **Synthesis**
 
-Synthesis is done through yosys by following these commands.
+The synthesis of the design is performed using **Yosys** with the following commands.
 
 ```bash
-yosys #to run yosys
+yosys #to launch yosys
 ```
 
 Then, inside yosys
