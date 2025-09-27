@@ -87,4 +87,4 @@ Gratitude to the SKY130 PDK community and open-source tools contributors like Yo
 
 Previous week, Week 0 (Installation of Tools) : [Week 0 Repository](https://github.com/navneetprasad1311/vsd-soc-pgrm-w0)
 
-<small>"One who studies without grasping the underlying principles, or who knows the principles but fails to apply them, cannot be truly learned.”</small>
+<sub>"One who studies without grasping the underlying principles, or who knows the principles but fails to apply them, cannot be truly learned.”</sub>
