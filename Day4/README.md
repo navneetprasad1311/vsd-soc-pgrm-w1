@@ -52,7 +52,7 @@ Pros:
 Cons:
 - Slow and harder to debug than RTL.
 
-![gls]()
+![gls](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/gls.png)
 
 ---
 
@@ -158,7 +158,7 @@ Cons:
 **Best Practice:**
 - Avoid blocking (=) in sequential blocks to ensure simulation matches synthesized hardware.
 
-![blockingvsnonblocking]()
+![blockingvsnonblocking](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/blockingvsnonblocking.png)
 
 ---
 
@@ -168,7 +168,7 @@ Cons:
 
 **Verilog Code:**
 
-![ternary_operator_mux]()
+![ternary_operator_mux](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/ternary_operator_mux.png)
 
 ```verilog
 module ternary_operator_mux (input i0 , input i1 , input sel , output y);
@@ -181,20 +181,20 @@ module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 
 _Workflow_:
 
-![workflow1]()
+![workflow1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow1.png)
 
 
 _Waveform_ :
 
-![waveform1]()
+![waveform1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform1.png)
 
 
 **Gate-level Simulation Results**
 
 _Workflow_ :
 
-![workflow2]()
-![synth_show]()
+![workflow2](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow2.png)
+![synth_show](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/synth_show.png)
 
 To perform GLS use the following command 
 
@@ -208,11 +208,11 @@ Format:
 iverilog -o <output file path> <verilog models path> <netlist file path> <testbench file path>
 ```
 
-![workflow3]()
+![workflow3](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow3.png)
 
 _Waveform_ :
 
-![waveform2]()
+![waveform2](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform2.png)
 
 
 **We see that there are no mismatches in functionality.**
@@ -225,7 +225,7 @@ _Waveform_ :
 
 **Verilog Code:**
 
-![bad_mux]()
+![bad_mux](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/bad_mux.png)
 
 ```verilog
 module bad_mux (input i0 , input i1 , input sel , output reg y);
@@ -245,32 +245,32 @@ This Verilog code only checks for changes in `sel` which does not account for ch
 
 _Workflow_ :
 
-![workflow4]()
+![workflow4](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow4.png)
 
 
 _Waveform_ :
 
-![waveform3]()
+![waveform3](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform3.png)
 
 
 **Gate-level Simulation Results**
 
 After creating the netlist through `yosys`,
 
-![workflow5]()
+![workflow5](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow5.png)
 
 Perform GLS,
 
-![workflow6]()
+![workflow6](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow6.png)
 
 _Waveform_ :
 
-![waveform4]()
+![waveform4](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform4.png)
 
 
 **Comparison**
 
-![comparison]()
+![comparison](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/comparison.png)
 
 Clearly, we see that when `sel` is low, the activity of `i0` is reflected on `y` in case of the Gate-level Simulation, whereas the output `y` has not changed with respect to `i0` in RTL Simulation.\
 Thus resulting in **Synthesis-Simulation Mismatch**
@@ -281,7 +281,7 @@ Thus resulting in **Synthesis-Simulation Mismatch**
 
 **Verilog Code:**
 
-![blocking_caveat]()
+![blocking_caveat](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/blocking_caveat.png)
 
 ```verilog
 module blocking_caveat (input a , input b , input  c, output reg d);
@@ -298,31 +298,31 @@ endmodule
 
 _Workflow_ :
 
-![workflow7]()
+![workflow7](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow7.png)
 
 _Waveform_ :
 
-![waveform5]()
+![waveform5](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform5.png)
 
 
 **GLS Simulation Results**
 
 After creating the netlist through `yosys`,
 
-![workflow8]()
+![workflow8](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow8.png)
 
 Perform GLS,
 
-![workflow9]()
+![workflow9](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/workflow9.png)
 
 _Waveform_ :
 
-![waveform6]()
+![waveform6](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/waveform6.png)
 
 
 **Comparison**
 
-![comparisonbc]()
+![comparisonbc](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/Images/comparisonbc.png)
 
 In RTL simulation, blocking executes sequentially,
 
@@ -346,5 +346,10 @@ Fix: Use non-blocking (<=) or split into separate always blocks for combinationa
   * Non-blocking (<=): parallel, updates at timestep end (models flops).
   * Best practice: use = for combinational, <= for sequential.
 - Blocking Caveats: Using = in clocked blocks causes order-dependent mismatches (e.g., register inference errors). Fix: use <= or restructure.
+
+---
+
+> [!Note]
+> For convenience and organized access, all netlist and compiled Verilog files have been stored in the `~/Documents/Verilog/Labs` folder, facilitating efficient simulation and verification.
 
 ---
