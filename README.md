@@ -1,4 +1,4 @@
-# *Week 1* VSD RISC-V Tapeout Program ![RTL Simulation & Optimisation](https://img.shields.io/badge/RTL_Simulation_%26_Optimisation-done-darkgreen)
+# *Week 1* VSD RISC-V Tapeout Program ![Simulation & Optimisation](https://img.shields.io/badge/Simulation_%26_Optimisation-done-darkgreen)
 
 `20/09/2025` to `27/09/2025`
 
@@ -19,8 +19,8 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 | ----- | --------------------- | ----------------------------------------- |
 | Day 1 | RTL Introduction      | Mux, DFF, testbenches                     |
 | Day 2 | Timing & Hierarchy    | Hierarchical vs flat synthesis            |
-| Day 3 | Optimizations         | Propagation, Cloning                      |
-| Day 4 | Gate Level Simulation | Blocking vs non-blocking, mismatches      |
+| Day 3 | Optimizations         | Propagation, Cloning, Retiming            |
+| Day 4 | Gate Level Simulation | Blocking vs non-blocking, Mismatches      |
 | Day 5 | Optimizations in synthesis | Conditions and Loops                 |
 
 
@@ -28,10 +28,15 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
  - [Day 1: Introduction to Verilog RTL design and synthesis](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day1/README.md)
  - [Day 2: Timing libs, Hierarchical vs Flat synthesis and Efficient Flop coding styles](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day2/README.md)
  - [Day 3: Combinational and Sequential Optimizations](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day3/README.md)
+ - [Day 4 - GLS, Blocking vs Non-blocking and Synthesis-Simulation mismatch](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day4/README.md)
  
 
 
 ## Summary
+
+
+
+## Notes / Troubleshooting
 
 
 
