@@ -9,10 +9,13 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 ## Table of Contents
 
 1. [Roadmap](#roadmap)
-2. [Day-Wise Labs](#day-wise-labs)
-3. [Summary](#summary)
-4. [Notes](#notes)
-5. [Contributor](#contributor)
+2. [Prerequisites](#prerequisites)
+3. [Day-Wise Labs](#day-wise-labs)
+4. [Day-Wise Folder Simulation](#day-wise-folder-simulation)
+5. [Summary](#summary)
+6. [Acknowledgements](#acknowledgements)
+7. [Notes](#notes)
+8. [Contributor](#contributor)
 
 ---
 
@@ -47,7 +50,7 @@ This document focuses on RTL design, simulation, and optimisation using __Yosys,
 
 ## Day-Wise Folder Simulation
 
-1. Navigate to `Day X` folder.
+1. Navigate to `Day 'X'` folder.
 2. Compile RTL or netlist using `iverilog`.
 3. Simulate using `vvp` and open waveforms with GTKWave.
 4. Follow snapshots in the README for expected results.
