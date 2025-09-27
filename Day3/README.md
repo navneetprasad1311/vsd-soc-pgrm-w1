@@ -350,8 +350,3 @@ Running synthesis will generate the optimized netlist, which can be represented 
 - Reduces gates, power, critical path; preserves functionality
 
 ---
-
-> [!Note]
-> For convenience and organized access, all netlist and compiled Verilog files have been stored in the `~/Documents/Verilog/Labs` folder, facilitating efficient simulation and verification.
-
----

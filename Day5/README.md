@@ -215,21 +215,21 @@ endmodule
 
 _Workflow_ :
 
-![workflow1]()
+![workflow1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow1.png)
 
 _Waveform_:
 
-![waveform1]()
+![waveform1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform1.png)
 
 **Synthesis Netlist Check**
 
 _Workflow_ :
 
-![workflow2]()
+![workflow2](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow2.png)
 
 _Netlist Dot File_ :
 
-![dotfile1]()
+![dotfile1](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/dotfile1.png)
 
 - If `i0` is high, `y` takes the value of `i1`.
 - If `i0` is low, `y` is **not assigned**, so it retains its previous value, causing a **latch to be inferred**.
@@ -258,22 +258,22 @@ endmodule
 
 _Workflow_ :
 
-![workflow3]()
+![workflow3](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow3.png)
 
 _Waveform_ :
 
-![waveform2]()
+![waveform2](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform2.png)
 
 
 **Synthesis Netlist Check**
 
 _Workflow_ :
 
-![workflow4]()
+![workflow4](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow4.png)
 
 _Netlist Dot File_ :
 
-![dotfile2]()
+![dotfile2](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/dotfile2.png)
 
 - If `i0` is high, `y` follows `i1`.
 - Else, if `i2` is high, `y` follows `i3`.
@@ -303,21 +303,21 @@ endmodule
 
 _Workflow_ :
 
-![workflow5]()
+![workflow5](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow5.png)
 
 _Waveform_ :
 
-![waveform3]()
+![waveform3](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform3.png)
 
 **Synthesis Netlist Check**
 
 _Workflow_ :
 
-![workflow6]()
+![workflow6](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow6.png)
 
 _Netlist Dot FIle_ :
 
-![dotfile3]()
+![dotfile3](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/dotfile3.png)
 
 - If `sel` is `2'b00`, `y` takes the value of `i0`.
 - If `sel` is `2'b01`, `y` takes the value of `i1`.
@@ -350,30 +350,30 @@ endmodule
 
 _Workflow_ :
 
-![workflow7]()
+![workflow7](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow7.png)
 
 _Waveform_ :
 
-![waveform4]()
+![waveform4](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform4.png)
 
 
 **Post Synthesis Check**
 
 _Synthesis Workflow_ :
 
-![workflow8]()
+![workflow8](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow8.png)
 
 _Netlist Dot File_ :
 
-![dotfile4]()
+![dotfile4](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/dotfile4.png)
 
 _Simulation Workflow_:
 
-![workflow9]()
+![workflow9](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow9.png)
 
 _GLS Waveform_ :
 
-![waveform5]()
+![waveform5](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform5.png)
 
 - For `sel = 2'b00`, `y = i0`;  
 - For `sel = 2'b01`, `y = i1`;  
@@ -458,11 +458,11 @@ endmodule
 
 _Workflow_ :
 
-![workflow10]()
+![workflow10](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow10.png)
 
 _Waveform_ :
 
-![waveform6]()
+![waveform6](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform6.png)
 
 
 - Implements a 4-to-1 multiplexer using a `for` loop.
@@ -499,11 +499,11 @@ endmodule
 
 _Workflow_ :
 
-![workflow11]()
+![workflow11](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow11.png)
 
 _Waveform_ :
 
-![waveform7]()  
+![waveform7](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform7.png)  
 
 - Implements an 8-output demultiplexer using a `for` loop.  
 - Outputs `o0`–`o7` are packed into an 8-bit register `y_int` for easy indexing.  
@@ -563,32 +563,32 @@ endmodule
 
 _Workflow_ :
 
-![workflow12]()
+![workflow12](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow12.png)
 
 _Waveform_ :
 
-![waveform8]()
+![waveform8](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform8.png)
 
 
 **Synthesis**
 
 _Workflow_ :
 
-![workflow13]()
+![workflow13](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow13.png)
 
 _Netlist Dot File_ :
 
-![dotfile5]()
+![dotfile5](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/dotfile5.png)
 
 **Gate-Level Simulation**
 
 _Workflow_ :
 
-![workflow14]()
+![workflow14](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/workflow14.png)
 
 _Waveform_ :
 
-![waveform9]()
+![waveform9](https://github.com/navneetprasad1311/vsd-soc-pgrm-w1/blob/main/Day5/Images/waveform9.png)
 
 Thus, the *RTL Simulation*, *Synthesis*, and *Gate-level simulation* of the **8-bit Ripple Carry Adder** have been successfully completed and verified.
 

@@ -347,9 +347,3 @@ Fix: Use non-blocking (<=) or split into separate always blocks for combinationa
   * Best practice: use = for combinational, <= for sequential.
 - Blocking Caveats: Using = in clocked blocks causes order-dependent mismatches (e.g., register inference errors). Fix: use <= or restructure.
 
----
-
-> [!Note]
-> For convenience and organized access, all netlist and compiled Verilog files have been stored in the `~/Documents/Verilog/Labs` folder, facilitating efficient simulation and verification.
-
----

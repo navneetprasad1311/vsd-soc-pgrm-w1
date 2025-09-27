@@ -343,8 +343,3 @@ In this section, we performed **RTL-to-gate-level synthesis** of `good_mux.v` us
 This flow demonstrates the complete synthesis cycle: **read design -> synthesize -> map -> visualize -> save netlist -> analyze reports**, ensuring both functional correctness and readiness for further backend flows such as placement and routing.
 
 ---
-
-> [!Note]
-> For convenience and organized access, all netlist and compiled Verilog files have been stored in the `~/Documents/Verilog/Labs` folder, facilitating efficient simulation and verification.
-
----
